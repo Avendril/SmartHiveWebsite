@@ -1,30 +1,17 @@
-var express = require('express');
-var socket = require('socket.io');
+var net = require('net');
+var mqtt = require('./MQTTClient.js');
 
-// App setup
-var app = express();
-var server = app.listen(5000, function(){
-    console.log('listening for requests on port 5000,');
+var io  = require('socket.io').listen(5000);
+var client = new mqtt.MQTTClient(1883, '10.37.28.64', 'bchmielewski');
+
+io.sockets.on('connection', function (socket) {
+  socket.on('subscribe', function (data) {
+    console.log('I am Subscribing to '+data.topic);
+    client.subscribe(data.topic);
+  });
 });
 
-// Static files
-app.use(express.static('pages'));
-
-// Socket setup & pass server
-var io = socket(server);
-io.on('connection', (socket) => {
-
-    console.log('made socket connection', socket.id);
-
-    // Handle chat event
-    socket.on('chat', function(data){
-        // console.log(data);
-        io.sockets.emit('chat', data);
-    });
-
-    // Handle typing event
-    socket.on('typing', function(data){
-        socket.broadcast.emit('typing', data);
-    });
-
+client.addListener('mqttData', function(topic, payload){
+  console.log(topic+'='+payload);
+  io.sockets.emit('mqtt',{'topic':String(topic),'payload':String(payload)});
 });

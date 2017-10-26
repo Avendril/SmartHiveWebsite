@@ -9,6 +9,9 @@
 .row4, .row4 a{}
 .row5, .row5 a{}
 
+#txtArea{
+	overflow-y: auto;
+}
 
 #topbar{
 	padding:5px 0;

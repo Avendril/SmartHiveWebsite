@@ -3,7 +3,9 @@
 <head>
 <title>SmartHive-Temperature</title>
 <meta charset="utf-8">
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
@@ -31,20 +33,30 @@
   </nav>
 </div>
 <div class="wrapper row3">
-  <main class="hoc container clear">
-    <div class="content three_quarter">
-	<h1> Temperature readings Data: </h1>
-		<div id="tester" style="width:600px;height:250px;">
-
-		</div>
+  <main class="hoc container clear" styles="width:100%;">
+    <div class="sidebar one_quarter first" styles="width:30%;">
+      <h4>Temp Readings</h4>
+      <textarea id='txtArea' rows="4" cols="50" style="height:350px; width:220px; resize:none; overflow:auto;">
+      </textarea>
     </div>
-    <div class="clear"></div>
+    <div class="content three_quarter" styles="width:70%;">
+      <h1> Temperature readings Data: </h1>
+      <canvas id="myChart" style="width:100%">
+      </canvas>
+	  </div>
+    <div class="clear">
+    </div>
   </main>
 </div>
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear">
-    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">www.HistoricalMartialArts.com</a></p>
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">www.SmartHive.tssg.org</a></p>
   </div>
 </div>
+
+<!-- <script type="text/javascript" src="scripts/temp1.js"></script>
+<script type="text/javascript" src="scripts/temp2.js"></script>
+<script type="text/javascript" src="scripts/temp3.js"></script> -->
+<script type="text/javascript" src="scripts/chart.js"></script>
 </body>
 </html>
