@@ -192,34 +192,122 @@
 #copyright *{margin:0; padding:0;}
 
 *, *::before, *::after{transition:all .3s ease-in-out;}
-#mainav form *{transition:none !important;}
+#mainav form *{
+	transition:none !important;
+	}
 
-nav ul, nav ol{margin:0; padding:0; list-style:none;}
+nav ul, nav ol{
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
 
-#mainav, #breadcrumb, .sidebar nav{line-height:normal;}
-#mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after{position:absolute; font-family:"FontAwesome"; font-size:10px; line-height:10px;}
+#mainav, #breadcrumb, .sidebar nav{
+	line-height:normal;
+	}
+
+#mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after{
+	position:absolute;
+	font-family:"FontAwesome";
+	font-size:10px;
+	line-height:10px;
+	}
 
 /* Top Navigation */
 #mainav{}
 #mainav ul{}
-#mainav ul ul{z-index:9999; position:absolute; width:160px; text-align:left;}
-#mainav ul ul ul{left:160px; top:0;}
-#mainav li{display:block; position:relative; float:left; margin:0; padding:0; text-transform:uppercase;}
-#mainav li:last-child{margin-right:0;}
-#mainav li li{width:100%; margin:0; text-transform:none;}
-#mainav ul.clear{border:solid; border-width:0 0 0 1px;}
-#mainav li a{display:block; padding:20px; border:solid; border-width:0 1px 1px 0; border-collapse:collapse;}
-#mainav li li a{border-width:0 0 1px 0;}
-#mainav li li:first-child a, #mainav li li:last-child a{border-width:0 0 1px 0;}
-#mainav .drop{padding-left:25px;}
-#mainav li li a, #mainav li li .drop{display:block; margin:0; padding:10px 15px;}
-#mainav .drop:after, #mainav li li .drop:after{content:"\f0d7";}
-#mainav .drop:after{top:25px; left:15px;}
-#mainav li li .drop:after{top:15px; left:5px;}
-#mainav ul ul{visibility:hidden; opacity:0;}
-#mainav ul li:hover > ul{visibility:visible; opacity:1;}
 
-#mainav form{display:none; margin:0; padding:20px 0;}
+#mainav ul ul{
+	z-index:9999;
+	position:absolute;
+	width:10%;
+	text-align:left;
+	}
+
+#mainav ul ul ul{
+	left:160px;
+	top:0;
+	}
+
+#mainav li{
+	display:block;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+	text-transform:uppercase;
+	}
+
+#mainav li:last-child{
+	margin-right:0;
+	}
+
+#mainav li li{
+	width:100%;
+	margin:0;
+	text-transform:none;
+	}
+
+#mainav ul.clear{
+	border:solid;
+	border-width:0 0 0 1px;
+	}
+
+#mainav li a{
+	display:block;
+	padding:20px;
+	border:solid;
+	border-width:0 1px 1px 0;
+	border-collapse:collapse;
+	}
+
+#mainav li li a{
+	border-width:0 0 1px 0;
+	}
+
+#mainav li li:first-child a, #mainav li li:last-child a{
+	border-width:0 0 1px 0;
+	}
+
+#mainav .drop{
+	padding-left:25px;
+	}
+
+#mainav li li a, #mainav li li .drop{
+	display:block;
+	margin:0;
+	padding:10px 15px;
+	}
+
+#mainav .drop:after, #mainav li li .drop:after{
+	content:"\f0d7";
+	}
+
+#mainav .drop:after{
+	top:25px;
+	left:15px;
+	}
+
+#mainav li li .drop:after{
+	top:15px;
+	left:5px;
+	}
+
+#mainav ul ul{
+	visibility:hidden;
+	opacity:0;
+	}
+
+#mainav ul li:hover > ul{
+	visibility:visible;
+	opacity:1;
+ 	}
+
+#mainav form{
+	display:none;
+	margin:0;
+	padding:20px 0;
+	}
 #mainav form select, #mainav form select option{display:block; cursor:pointer; outline:none;}
 #mainav form select{width:100%; padding:5px; border:1px solid;}
 #mainav form select option{margin:5px; padding:0; border:none;}

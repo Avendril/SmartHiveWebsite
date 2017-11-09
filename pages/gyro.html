@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SmartHive-Gyroscope</title>
+<title>SmartHive-Gyroscope/Accelerometer</title>
 <meta charset="utf-8">
-<script src="scripts/test.js"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
@@ -12,7 +13,7 @@
 <div class="wrapper row1">
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">SmartHive-Gyroscope readings</a></h1>
+      <h1><a href="index.html">SmartHive-Accelerometer/Gyroscope readings</a></h1>
     </div>
   </header>
 </div>
@@ -20,32 +21,64 @@
   <nav id="mainav" class="hoc clear">
     <ul class="clear">
       <li><a href="index.html">Home</a></li>
-      <li><a class="drop" href="#">Sensors</a>
-        <ul>
-          <li><a href="temp.html">Temperature</a></li>
-          <li><a href="humidity.html">Humidity</a></li>
-          <li><a href="weight.html">Weight</a></li>
-          <li><a href="gyro.html">Gyroscope</a></li>
-        </ul>
-      </li>
+      <li><a href="temp.html">Temperature</a></li>
+      <li><a href="humidity.html">Humidity</a></li>
+      <li><a href="weight.html">Weight</a></li>
+      <li class="active"><a href="gyro.html">Gyroscope</a></li>
     </ul>
   </nav>
 </div>
 <div class="wrapper row3">
-  <main class="hoc container clear">
-    <div class="content three_quarter">
-	<h1> Gyroscope Data: </h1>
-		<div id="tester" style="width:600px;height:250px;">
-
-		</div>
+  <main class="hoc container clear" styles="width:100%;">
+    <div class="sidebar one_quarter first" styles="width:30%;">
+      <h4>X,Y,Z Accelerometer</h4>
+      <textarea id='txtArea' rows="4" cols="50" style="height:350px; width:220px; resize:none; overflow:auto;">
+      </textarea>
     </div>
-    <div class="clear"></div>
+    <div class="content one_quarter" styles="width:70%;">
+      <h1>Accel for X,Y,Z:<h1>
+
+      <h2>X-Axis(Accel):</h2>
+      <textarea id='Area1' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
+      <br>
+
+      <h2>Y-Axis(Accel):</h2>
+      <textarea id='Area2' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
+      <br>
+
+      <h2>Z-Axis(Accel):</h2>
+      <textarea id='Area3' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
+      <br>
+	  </div>
+    <div class="content one_quarter" styles="width:70%;">
+      <h1>Gyroscope for X,Y,Z:<h1>
+
+      <h2>X-Axis(Gyroscope):</h2>
+      <textarea id='Area4' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
+      <br>
+
+      <h2>Y-Axis(Gyroscope):</h2>
+      <textarea id='Area5' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
+      <br>
+
+      <h2>Z-Axis(Gyroscope):</h2>
+      <textarea id='Area6' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
+      <br>
+    </div>
+    <div class="sidebar one_quarter" styles="width:30%;">
+      <h4>X,Y,Z Gyroscope</h4>
+      <textarea id='txtArea2' rows="4" cols="50" style="height:350px; width:220px; resize:none; overflow:auto;">
+      </textarea>
+    </div>
+    <div class="clear">
+    </div>
   </main>
 </div>
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear">
-    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">tssg.org</a></p>
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">www.SmartHive.tssg.org</a></p>
   </div>
 </div>
+<script type="text/javascript" src="scripts/gyroChart.js"></script>
 </body>
 </html>
