@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
-<body id="top">
+<body id="top" onload="updateWeight(); setInterval('updateWeight()', 1000)">
 <div class="wrapper row1">
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left">
@@ -36,9 +36,21 @@
       </textarea>
     </div>
     <div class="content three_quarter" styles="width:70%;">
-      <h1> Weight Scale readings: </h1>
-      <canvas id="myChart" style="width:100%">
-      </canvas>
+      <table>
+        <tr>
+          <th colspan=3> Weight scale readings: </th>
+        </tr>
+        <tr>
+          <td>Time: </td>
+          <td>Type:</td>
+          <td>Data: </td>
+        </tr>
+        <tr>
+          <td id="returnTime" style="width:33%"><span class="clock"></span></td>
+          <td id="returnType" style="width:33%"> Kilograms</td>
+          <td id="returnWeight" style="width:33%"><span id="glock">&nbsp;</span></td>
+        </tr>
+      </table>
 	  </div>
     <div class="clear">
     </div>
