@@ -30,45 +30,30 @@
 </div>
 <div class="wrapper row3">
   <main class="hoc container clear" styles="width:100%;">
-    <div class="sidebar one_quarter first" styles="width:30%;">
-      <h4>X,Y,Z Accelerometer</h4>
-      <textarea id='txtArea' rows="4" cols="50" style="height:350px; width:220px; resize:none; overflow:auto;">
-      </textarea>
-    </div>
-    <div class="content one_quarter" styles="width:70%;">
-      <h1>Accel for X,Y,Z:<h1>
-
-      <h2>X-Axis(Accel):</h2>
-      <textarea id='Area1' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
-      <br>
-
-      <h2>Y-Axis(Accel):</h2>
-      <textarea id='Area2' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
-      <br>
-
-      <h2>Z-Axis(Accel):</h2>
-      <textarea id='Area3' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
-      <br>
-	  </div>
-    <div class="content one_quarter" styles="width:70%;">
-      <h1>Gyroscope for X,Y,Z:<h1>
-
-      <h2>X-Axis(Gyroscope):</h2>
-      <textarea id='Area4' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
-      <br>
-
-      <h2>Y-Axis(Gyroscope):</h2>
-      <textarea id='Area5' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
-      <br>
-
-      <h2>Z-Axis(Gyroscope):</h2>
-      <textarea id='Area6' rows="1" cols="50" style="height:50px; width:95%; resize:none; overflow:auto;"></textarea>
-      <br>
-    </div>
-    <div class="sidebar one_quarter" styles="width:30%;">
-      <h4>X,Y,Z Gyroscope</h4>
-      <textarea id='txtArea2' rows="4" cols="50" style="height:350px; width:220px; resize:none; overflow:auto;">
-      </textarea>
+    <div class="sidebar four_quarter first" styles="width:30%;">
+      <table>
+        <tr>
+          <th colspan=4> Gyroscope/Accelerometer Readings</th>
+        </tr>
+        <tr>
+          <td style="width:20%;">Accelerometer X: </td>
+          <td style="width:20%;"> <span id="accX">&nbsp;</span> </td>
+          <td style="width:20%;">Gyroscope X: </td>
+          <td style="width:20%;"> <span id="gyrX">&nbsp;</span> </td>
+        </tr>
+        <tr>
+          <td style="width:20%;">Accelerometer Y: </td>
+          <td style="width:20%;"> <span id="accY">&nbsp;</span> </td>
+          <td style="width:20%;">Gyroscope Y: </td>
+          <td style="width:20%;"> <span id="gyrY">&nbsp;</span> </td>
+        </tr>
+        <tr>
+          <td style="width:20%;">Accelerometer Z: </td>
+          <td style="width:20%;"> <span id="accZ">&nbsp;</span> </td>
+          <td style="width:20%;">Gyroscope Z: </td>
+          <td style="width:20%;"> <span id="gyrZ">&nbsp;</span> </td>
+        </tr>
+      </table>
     </div>
     <div class="clear">
     </div>
