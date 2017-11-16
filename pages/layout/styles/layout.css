@@ -9,6 +9,16 @@
 .row4, .row4 a{}
 .row5, .row5 a{}
 
+	#dclock {
+	  font-family: Arial, Helvetica, sans-serif;
+	  text-align: center;
+	  font-size: 1.0em;
+	  color: white;
+	  background-color: black;
+	  border: 2px solid purple;
+	  padding: 4px;
+	}
+	
 #txtArea{
 	overflow-y: auto;
 }

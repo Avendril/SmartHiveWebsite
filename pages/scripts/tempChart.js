@@ -9,6 +9,16 @@ var values2 = []; //create an Array of values from Temperature sensor 2
 var times = []; //create an Array of times
 
 var text = 'txtArea'; //enter the name of the text field
+
+var chartColors = {
+  red: 'rgb(255, 99, 132)',
+  orange: 'rgb(255, 159, 64)',
+  yellow: 'rgb(255, 205, 86)',
+  green: 'rgb(75, 192, 192)',
+  blue: 'rgb(54, 162, 235)',
+  purple: 'rgb(153, 102, 255)',
+  grey: 'rgb(231,233,237)'
+};
 //---------------------Temperature1 + 2 ----------------------------------------
 var socket = io.connect('http://localhost:5000');
 
@@ -73,22 +83,49 @@ function createGraph(dataValues, dataValues2, dataTimes){
 	      label: 'Internal Temperature',
 	      data: dataValues,//Passing the array to be the data set
         borderColor: "#3e95cd",
-        fill: false
+        backgroundColor: "rgba(62, 149, 205, 0.4)",
+        // backgroundColor: chartColors.red,
+        // borderColor: chartColors.red,
+        fill: true
     	},
       {
 	      label: 'External Temperature',
 	      data: dataValues2,//Passing the array to be the data set
         borderColor: "#ff00e5",
-        fill: false
+        backgroundColor: "rgba(255, 0, 229, 0.4)",
+        // backgroundColor: chartColors.blue,
+        // borderColor: chartColors.blue,
+        fill: true
     	}
 		]
   },
   options: {
-  	scales: {
-    	yAxes: [{
-        ticks: {
-					reverse: false
-        }
+      responsive: true,
+      // title: {
+      //   display: true,
+      //   text: 'Chart.js Line Chart'
+      // },
+      tooltips: {
+        mode: 'label',
+      },
+      hover: {
+        mode: 'nearest',
+        intersect: true
+      },
+      scales: {
+        xAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Time'
+          }
+        }],
+        yAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Temperature'
+          }
       }]
     }
   }

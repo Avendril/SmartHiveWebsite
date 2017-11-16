@@ -13,7 +13,7 @@ socket.on('connect', function (){
 
       var elmarr=msg.topic.split("/");
       var elm=elmarr[3];
-      
+
       if( elmarr.indexOf('Humidity') >= 0){
         $('#txtHumi').append("\n" + msg.payload + "%");
         $('#txtHumi').scrollTop($('#txtHumi')[0].scrollHeight);
@@ -52,15 +52,37 @@ function createGraph(dataValues, dataTimes){
 	      label: 'Humidity Readings',
 	      data: dataValues,//Passing the array to be the data set
         borderColor: "#3e95cd",
-        fill: false
+        backgroundColor: "rgba(62, 149, 205, 0.4)",
+        fill: true
     	}]
   },
   options: {
-  	scales: {
-    	yAxes: [{
-        ticks: {
-					reverse: false
-        }
+      responsive: true,
+      // title: {
+      //   display: true,
+      //   text: 'Chart.js Line Chart'
+      // },
+      tooltips: {
+        mode: 'label',
+      },
+      hover: {
+        mode: 'nearest',
+        intersect: true
+      },
+      scales: {
+        xAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Time'
+          }
+        }],
+        yAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Humidity'
+          }
       }]
     }
   }
