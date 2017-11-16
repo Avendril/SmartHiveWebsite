@@ -4,7 +4,7 @@ var socket = io.connect('http://localhost:5000');
 socket.on('connect', function (){
     socket.on('mqtt', function (msg){
 
-      var elmarr=msg.topic.split("/");
+      var index=msg.topic.split("/"); //Makes index and Array with different topic elements example: index[0] ="SmartHive",index[1]="Temperature",index[2]="Temp1"
 
       Array.prototype.contains = function ( needle ) {
          for (i in this) {
@@ -13,19 +13,19 @@ socket.on('connect', function (){
          return false;
       }
 
-      if (elmarr.contains('Gyroscope')) { //Get all data from Gyroscope queue
+      if (index.contains('Gyroscope')) { //Get all data from Gyroscope queue
 
-        if((elmarr.indexOf('X-Axis')) >= 0){//X-Axis queue  && 'X-Axis'
+        if((index.indexOf('X-Axis')) >= 0){//X-Axis queue  && 'X-Axis'
           var sendData1 = msg.payload;
           printText("gyrX", sendData1); //Publish data to the textArea
         };
 
-        if((elmarr.indexOf('Y-Axis')) >= 0){//X-Axis queue  && 'X-Axis'
+        if((index.indexOf('Y-Axis')) >= 0){//X-Axis queue  && 'X-Axis'
           var sendData1 = msg.payload;
           printText("gyrY", sendData1); //Publish data to the textArea
         };
 
-        if((elmarr.indexOf('Z-Axis')) >= 0){//X-Axis queue  && 'X-Axis'
+        if((index.indexOf('Z-Axis')) >= 0){//X-Axis queue  && 'X-Axis'
           var sendData1 = msg.payload;
           printText("gyrZ", sendData1); //Publish data to the textArea
         };

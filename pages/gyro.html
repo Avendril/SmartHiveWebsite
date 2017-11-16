@@ -6,6 +6,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript" src="http://www.html5canvastutorials.com/libraries/three.min.js"></script>
+<script type="text/javascript" src="scripts/three.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
@@ -54,7 +56,15 @@
           <td style="width:20%;"> <span id="gyrZ">&nbsp;</span> </td>
         </tr>
       </table>
-      <p> Note: Any readings below 5* are to be ignored, its just accuracy of this perticular sensor. </p>
+      <p> Note: Sensor accuracy at current configuration can have a difference of 5 degree, calibration is needed. </p>
+      <p> Note: Sensor takes the angle it was turned on at as 0 degree, make sure that everything is leveled before turning system on. </p>
+      <br>
+      <table>
+        <tr>
+          <th><canvas id="myCanvas" style="width:100%;height:500px;"></canvas></th>
+        </tr>
+      </table>
+
     </div>
     <div class="clear">
     </div>
@@ -67,5 +77,6 @@
 </div>
 <script type="text/javascript" src="scripts/accelerometerData.js"></script>
 <script type="text/javascript" src="scripts/gyroscopeData.js"></script>
+<script type="text/javascript" src="scripts/angleDisplay.js"></script>
 </body>
 </html>
